@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Temperature Converter</title>
+    <style type="text/css">
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #0074D9;
+    margin-bottom: 20px;
+}
+
+.converter {
+    margin: 20px 0;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #0074D9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0074D9;
+    margin-top: 20px;
+}
+div
+{
+    border:10px solid skyblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="converter">
+            <label for="celsius">Celsius:</label>
+            <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+            <button id="convert">Convert</button>
+            <p id="result">Result: </p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("convert").addEventListener("click", function () {
+    
+    const celsius = parseFloat(document.getElementById("celsius").value);
+
+    
+    if (!isNaN(celsius)) {
+    
+        const fahrenheit = (celsius * 9/5) + 32;
+
+    
+        document.getElementById("result").textContent = `Result: ${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+    } else {
+    
+        document.getElementById("result").textContent = "Please enter a valid temperature in Celsius.";
+    }
+});
+
+    </script>
+</body>
+</html>
